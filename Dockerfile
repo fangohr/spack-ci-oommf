@@ -69,7 +69,10 @@ RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack test run --alias testname oo
 RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack test results -l testname
 
 # show oommf version at very end of output 
-RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack load oommf && oommf --version
+RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack load oommf && oommf.tcl +version
+
+RUN echo $OOMMF_ROOT
+RUN echo $OOMMFTCL
 
 # Provide bash in case the image is meant to be used interactively
 CMD /bin/bash -l
