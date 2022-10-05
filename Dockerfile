@@ -57,17 +57,17 @@ RUN ls -l $SPACK_ROOT/var/spack/repos/builtin/packages/oommf
 # display available versions of oommf
 RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack info oommf
 
-# display specs of upcoming spack installation
-RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack spec tk
-
-# install tk (debugging)
-RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack install tk
-
-# display specs of upcoming spack installation
-RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack spec oommf 
+# install tk (debugging only)
+# RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack install tk
 
 # run the spack installation
 RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack install oommf 
+
+# display specs of upcoming spack installation
+RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack spec tk
+
+# display specs of upcoming spack installation
+RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack spec oommf 
 
 # run spack smoke tests for oommf. We get an error if any of the fail.
 RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack test run --alias testname oommf
