@@ -58,6 +58,12 @@ RUN ls -l $SPACK_ROOT/var/spack/repos/builtin/packages/oommf
 RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack info oommf
 
 # display specs of upcoming spack installation
+RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack spec tk
+
+# install tk (debugging)
+RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack install tk
+
+# display specs of upcoming spack installation
 RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack spec oommf 
 
 # run the spack installation
