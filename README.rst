@@ -30,10 +30,10 @@ would install if we run `spack install oommf`).
 
 We try different versions of Spack:
 
-- |spack-develop-oommf-stable| Spack develop version (git head), OOMMF 12.0
-- |spack-latest-oommf-stable| Spack latest release (=0.18.1), OOMMF 11.4
-- |spack-v0.18.1-oommf-stable| Spack release 0.18.1, OOMMF 11.4
-- |spack-v0.18.0-oommf-stable| Spack release 0.18.0, OOMMF 11.4
+- |spack-develop-oommf-stable| Spack develop version (git head), OOMMF 2.0a3
+- |spack-latest-oommf-stable| Spack latest release (=0.18.1), OOMMF 2.0a3
+- |spack-v0.18.1-oommf-stable| Spack release 0.18.1, OOMMF 2.0a3
+- |spack-v0.18.0-oommf-stable| Spack release 0.18.0, OOMMF 2.0a3
 
 .. |spack-latest-oommf-stable| image:: https://github.com/fangohr/oommf-in-spack/actions/workflows/spack-latest.yml/badge.svg
    :target: https://github.com/fangohr/spack-ci-oommf/actions/workflows/spack-latest.yml
