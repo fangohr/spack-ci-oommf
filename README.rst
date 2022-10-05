@@ -35,7 +35,7 @@ We try different versions of Spack:
 - |spack-v0.18.1-oommf-stable| Spack release 0.18.1, OOMMF 2.0a3
 - |spack-v0.18.0-oommf-stable| Spack release 0.18.0, OOMMF 2.0a3
 
-.. |spack-latest-oommf-stable| image:: https://github.com/fangohr/oommf-in-spack/actions/workflows/spack-latest.yml/badge.svg
+.. |spack-latest-oommf-stable| image:: https://github.com/fangohr/spack-ci-oommf/actions/workflows/spack-latest.yml/badge.svg
    :target: https://github.com/fangohr/spack-ci-oommf/actions/workflows/spack-latest.yml
    
 .. |spack-v0.18.0-oommf-stable| image:: https://github.com/fangohr/spack-ci-oommf/actions/workflows/spack-v0.18.0.yml/badge.svg
