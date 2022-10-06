@@ -77,6 +77,10 @@ RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack test results -l testname
 # show oommf version at very end of output 
 RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack load oommf && oommf.tcl +version
 
+# Now test the last n versions, including vanilla:
+ADD build-and-test-most-recent-versions.sh
+RUN bash build-and-test-most-recent-versions.sh
+
 RUN echo $OOMMF_ROOT
 RUN echo $OOMMFTCL
 
