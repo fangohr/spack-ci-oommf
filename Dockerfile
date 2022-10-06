@@ -80,6 +80,7 @@ RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack load oommf && oommf.tcl +ver
 RUN echo $OOMMF_ROOT
 RUN echo $OOMMFTCL
 
+WORKDIR /io
 # Provide bash in case the image is meant to be used interactively
 CMD /bin/bash -l
 

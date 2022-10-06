@@ -17,6 +17,6 @@ spack-v0.18.1:
 
 
 run:
-	docker run --rm -ti -v $PWD:/io oommf-spack 
+	docker run --rm -ti -v ${PWD}:/io oommf-spack 
 
 .PHONY: oommf-spack-v0.18.1 run spack-v0.18.0 spack-latest spack-develop
