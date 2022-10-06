@@ -51,6 +51,7 @@ RUN $SPACK --version
 
 # copy our package.py into the spack tree (and also example files)
 # COPY spack/package.py $SPACK_ROOT/var/spack/repos/builtin/packages/oommf/package.py
+COPY build-and-test-most-recent-versions.sh .
 
 RUN ls -l $SPACK_ROOT/var/spack/repos/builtin/packages/oommf
 
@@ -78,7 +79,6 @@ RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack test results -l testname
 RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack load oommf && oommf.tcl +version
 
 # Now test the last n versions, including vanilla:
-ADD build-and-test-most-recent-versions.sh
 RUN bash build-and-test-most-recent-versions.sh
 
 RUN echo $OOMMF_ROOT
