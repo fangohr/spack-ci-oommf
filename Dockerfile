@@ -49,36 +49,45 @@ RUN cd spack && git checkout $SPACK_VERSION
 # # show which version we use
 RUN $SPACK --version
 
-# copy our package.py into the spack tree (and also example files)
-# COPY spack/package.py $SPACK_ROOT/var/spack/repos/builtin/packages/oommf/package.py
-
 RUN ls -l $SPACK_ROOT/var/spack/repos/builtin/packages/oommf
+
+# copy utility script to test the most recent oommf versions
+COPY build-and-test-most-recent-versions.sh .
 
 # display available versions of oommf
 RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack info oommf
 
-# install tk (debugging only)
-# RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack install tk
+# Set of commands that might be useful for debugging
+# but should not be needed here
+#
+# # install tk (debugging only)
+# # RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack install tk
+# 
+# # run the spack installation
+# RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack install oommf 
+# 
+# # display specs of upcoming spack installation
+# RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack spec tk
+# 
+# # display specs of upcoming spack installation
+# RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack spec oommf 
+# 
+# # run spack smoke tests for oommf. We get an error if any of the fail.
+# RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack test run --alias testname oommf
+# # display output from smoke tests (just for information)
+# RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack test results -l testname
+# 
+# # show oommf version at very end of output 
+# RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack load oommf && oommf.tcl +version
+# 
+# RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack uninstall -y oommf 
 
-# run the spack installation
-RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack install oommf 
-
-# display specs of upcoming spack installation
-RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack spec tk
-
-# display specs of upcoming spack installation
-RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack spec oommf 
-
-# run spack smoke tests for oommf. We get an error if any of the fail.
-RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack test run --alias testname oommf
-# display output from smoke tests (just for information)
-RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack test results -l testname
-
-# show oommf version at very end of output 
-RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack load oommf && oommf.tcl +version
+# Now test the last n versions of OOMMF, including -vanilla:
+RUN . $SPACK_ROOT/share/spack/setup-env.sh && bash build-and-test-most-recent-versions.sh
 
 RUN echo $OOMMF_ROOT
 RUN echo $OOMMFTCL
+RUN . $SPACK_ROOT/share/spack/setup-env.sh && spack find -v -l oommf
 
 WORKDIR /io
 # Provide bash in case the image is meant to be used interactively
