@@ -9,7 +9,6 @@ VERSIONS=`spack info oommf | grep -A 4 "Safe versions:" | awk 'NR>1' | awk '{pri
 echo $VERSIONS
 for VER in $VERSIONS; do
     date
-    spack install does-not-exist
     echo "Installing $VER ...";
     spack install oommf@$VER
     
