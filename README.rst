@@ -31,7 +31,7 @@ would install if we run `spack install oommf`).
 We try different versions of Spack:
 
 - |spack-develop-oommf-stable| Spack develop version (git head), OOMMF 2.0b0
-- |spack-latest-oommf-stable| Spack latest release (=0.18.1), OOMMF 2.0a3
+- |spack-latest-oommf-stable| Spack latest release (=0.19.0), OOMMF 2.0b0_vanilla
 - |spack-v0.18.1-oommf-stable| Spack release 0.18.1, OOMMF 2.0a3
 - |spack-v0.18.0-oommf-stable| Spack release 0.18.0, OOMMF 2.0a3
 
