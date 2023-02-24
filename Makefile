@@ -7,7 +7,7 @@ spack-latest:
 	docker build -f Dockerfile --build-arg SPACK_VERSION=releases/latest \
 	-t oommf-spack-latest .
 
-spack-v0.18.0:
+spack-v0.19.0:
 	docker build -f Dockerfile --build-arg SPACK_VERSION=v0.19.0 \
    -t oommf-spack-v0.19.0 .
 
