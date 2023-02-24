@@ -8,8 +8,8 @@ spack-latest:
 	-t oommf-spack-latest .
 
 spack-v0.18.0:
-	docker build -f Dockerfile --build-arg SPACK_VERSION=v0.18.0 \
-   -t oommf-spack-v0.18.0 .
+	docker build -f Dockerfile --build-arg SPACK_VERSION=v0.19.0 \
+   -t oommf-spack-v0.19.0 .
 
 spack-v0.18.1:
 	docker build -f Dockerfile --build-arg SPACK_VERSION=v0.18.1 \
@@ -19,4 +19,4 @@ spack-v0.18.1:
 run:
 	docker run --rm -ti -v ${PWD}:/io oommf-spack 
 
-.PHONY: oommf-spack-v0.18.1 run spack-v0.18.0 spack-latest spack-develop
+.PHONY: oommf-spack-v0.18.1 run spack-v0.19.0 spack-latest spack-develop
