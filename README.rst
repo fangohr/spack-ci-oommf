@@ -35,7 +35,8 @@ We try different versions of Spack:
 - |spack-v0.19.0-oommf-stable| Spack release 0.19.0, OOMMF 2.0a3
 - |spack-v0.18.1-oommf-stable| Spack release 0.18.1, OOMMF 2.0a3
 
-[Note that the tests for OOMMF in spack v0.19.0 are broken.]
+[Note that the tests for OOMMF in spack v0.19.0 and v0.19.1 are broken, and the
+failures above reflect this; installation of oommf works fine though.]
 
 .. |spack-latest-oommf-stable| image:: https://github.com/fangohr/spack-ci-oommf/actions/workflows/spack-latest.yml/badge.svg
    :target: https://github.com/fangohr/spack-ci-oommf/actions/workflows/spack-latest.yml
